@@ -9,7 +9,7 @@
 	context.fillStyle = "white";
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	context.color = "black";
-	context.lineWidth = 15;
+	context.lineWidth = 8;
     context.lineJoin = context.lineCap = 'round';
 	
 	debug();
@@ -19,7 +19,7 @@
 		lastMouse.y = Mouse.y;
 
 		Mouse.x = e.pageX - this.offsetLeft;
-        Mouse.y = e.pageY - this.offsetTop-50;
+        Mouse.y = e.pageY - this.offsetTop;
 	}, false);
 
 	canvas.addEventListener("mousedown", function(e) {
@@ -51,17 +51,3 @@
 		});
 	}
 }());
-
-$("#myButton").click(function(){
-    $('#result').text('  Predicting...');
-    var canvasObj = document.getElementById("canvas");
-    var img = canvasObj.toDataURL('image/jpeg');
-    $.ajax({
-        type: "POST",
-        url: "/upload/",
-        data: img,
-        success: function(data){
-            $('#result').text('Predicted Output: ' + data);
-        }
-    });
-});
