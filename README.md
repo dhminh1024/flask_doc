@@ -3,7 +3,7 @@
 ## Project structure
 Run this in the project folder
 ```
-mkdir app app/templates app/static app/static/js app/static/css app/blueprints app/middlewares app/models app/static/images
+mkdir app app/templates app/static app/static/js app/static/css app/blueprints app/middlewares app/models app/static/images app/uploads
 touch app/main.py app/templates/base.html app/static/js/index.js app/static/css/style.css
 touch app/blueprints/__init__.py
 ```
@@ -23,7 +23,7 @@ Start with `fapp`, remove the route
 
 Run this in the project folder. Change 'home_page' to make a new blueprint
 ```
-export NEW_BLUEPRINT=predict
+export NEW_BLUEPRINT=predict_api
 mkdir app/blueprints/$NEW_BLUEPRINT
 touch app/blueprints/$NEW_BLUEPRINT/__init__.py app/blueprints/$NEW_BLUEPRINT/blueprint.py
 echo "from .$NEW_BLUEPRINT import $NEW_BLUEPRINT" >> app/blueprints/__init__.py
